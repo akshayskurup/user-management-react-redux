@@ -1,0 +1,35 @@
+.navbar {
+    background-color: #333;
+    overflow: hidden;
+    text-align: center;
+    margin: 0;
+}
+
+.navbar-title {
+    color: white;
+    font-size: 20px;
+    line-height: 50px;
+    margin: 0;
+}
+.btns{
+    display: flex;
+    float: right;
+    gap: 10px;
+    margin-top: -43px;
+    margin-right: 10px; 
+}
+.logout-btn {
+    float: right;
+    color: white;
+    background-color: #f44336;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+   
+}
+.content{
+    text-align: center;
+}
