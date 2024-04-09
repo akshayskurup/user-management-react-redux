@@ -12,8 +12,7 @@ const initialState = {
     isSuccess:false,
     isLoading:false,
     message:"",
-    sampleMess:false,
-    sampleCount:0
+    dp:null,
 }
 
 //Register User
@@ -58,12 +57,20 @@ export const authSlice = createSlice({
             state.isError = false,
             state.message = ''
         },
-        sample:(state)=>{
-            state.sampleMess=true
+        imageChange:(state,action)=>{
+            console.log(action.payload)
+            state.dp = action.payload
         },
-        count:(state)=>{
-            state.sampleCount+=1
+        setToken:(state,action)=>{
+            state.token = action.payload
+        },
+        increment:(state)=>{
+            state.count++
+        },
+        decrement:(state)=>{
+            state.count--
         }
+
         
     },
     extraReducers :(builder)=>{
@@ -104,9 +111,10 @@ export const authSlice = createSlice({
         //logout
         .addCase(logout.fulfilled,(state)=>{
             state.user = null
+            state.dp = null
         })
     }
 })
 
-export  const {reset,sample,count} = authSlice.actions
+export  const {reset,increment,decrement,imageChange} = authSlice.actions
 export default authSlice.reducer

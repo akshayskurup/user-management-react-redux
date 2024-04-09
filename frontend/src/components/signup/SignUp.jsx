@@ -39,6 +39,16 @@ function SignUp() {
     const{name,email,password,password2} = formData
     
     const onSubmit = ()=>{
+
+        if(!/^[a-zA-Z ]{3,40}$/.test(name)){
+            return toast.error("Name should be valid")
+        }else if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+            return toast.error("Email should be valid")
+        }else if(password.length <=4){
+            return toast.error("Password is weak")
+        }
+        
+        
         if(password !== password2){
             toast.error("Password do not match")
         }else{

@@ -45,28 +45,25 @@ adminController.createUser = async(req,res)=>{
         email,
         password:hashedPassword
     })
-    res.status(200).json({message:"Successfully created new user"})
+    res.status(200).json({message:"Successfully created new user",user})
 }
 
 adminController.editUser = async(req,res)=>{
     const userId = req.params.id
-    const {name,email,password} = req.body
-    const user = await User.findById(userId)
-    if(!user){
+    const {user} = req.body
+    const editUserMail =user.email
+    console.log(editUserMail)
+    const userExists = await User.findById(userId)
+    if(!userExists){
         res.status(400).json({message:"User not available"})
     }
-    const userWithSameEmail = await User.findOne({ email });
+    const userWithSameEmail = await User.findOne({email:editUserMail});
+    console.log("userWithSameEmail",userWithSameEmail)
     if (userWithSameEmail && userWithSameEmail._id.toString() !== userId) {
         return res.status(400).json({ message: "Email already exists" });
     }
-    const salt = await bcrypt.genSalt(10)
-    const hashedPassword = await bcrypt.hash(password,salt)
-
-    const updatedUser = await User.findByIdAndUpdate(userId,{
-        name,
-        email,
-        password:hashedPassword
-        },{new:true,})
+   
+    await User.findByIdAndUpdate(userId,user)
     res.status(200).json({message:"Successfully updated user"})
 }
 

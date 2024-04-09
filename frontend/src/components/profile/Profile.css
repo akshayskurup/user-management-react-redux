@@ -1,50 +1,4 @@
-/* .profile {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
-    background: #12121211;
-    height: 600px;
-}
 
-.card {
-    width: 400px;
-    min-height: 40vh; 
-    background: #524e4e;
-    border-radius: 7px;
-    box-shadow: 1px 1px 5px 3px rgb(0, 0, 0);
-}
-
-.round-img {
-    background: #17af12;
-    width: 120px;
-    height: 120px;
-    margin: 15px auto;
-    margin-bottom: 0;
-    border-radius: 60px;
-}
-
-.prf-name,
-.prf-email {
-    margin-bottom: 0px;
-    margin-top: 0;
-    color: whitesmoke;
-    font-size: 1.1rem;
-}
-
-.prf-upload {
-    margin-top: 20px;
-    margin-bottom: 0;
-}
-
-.upload-btn {
-    margin-top: 10px;
-    margin-left: 70px;
-}
-
-.preview-img {
-    width: 300px;
-    height: 200px;
-} */
 .profile {
     align-items: center;
     background: #12121211;
@@ -68,7 +22,7 @@
 }
 
 .round-img {
-    background: #17af12;
+    background: #17af123f;
     width: 120px;
     height: 120px;
     margin: 15px auto;
@@ -87,11 +41,12 @@
 .prf-upload {
     margin-top: 20px;
     margin-bottom: 0;
+    color: rgba(245, 245, 245, 0.459);
 }
 
 .upload-btn {
     margin-top: 10px;
-    margin-left: 110px;
+    margin-left: 165px;
 }
 
 .preview-img {

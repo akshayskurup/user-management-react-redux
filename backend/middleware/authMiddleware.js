@@ -3,7 +3,7 @@ const User = require('../model/userSchema')
 
 const verifyToken = async(req,res,next)=>{
     const authHeader = req.headers.authorization
-
+    
    
     const token = authHeader.split(' ')[1];
     try {
@@ -23,8 +23,7 @@ const verifyToken = async(req,res,next)=>{
 }
 
 const adminVerifyToken = (req, res, next) => {
-    console.log("inside middleware")
-    console.log(req.headers)
+
     const authHeader = req.headers.authorization
     const token = authHeader.split(' ')[1];
     if (!token) return res.status(401).json({ message: 'Access Denied' });
